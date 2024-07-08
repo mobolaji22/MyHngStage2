@@ -1,12 +1,16 @@
-import CheckOut from "./Checkout";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Store from "./components/Store";
+import Checkout from "./components/Checkout";
 
-
-function App() {
+const App = () => {
   return (
-    <>
-      <CheckOut />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Store />} />
+        <Route path="/checkout" element={<Checkout />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

@@ -1,13 +1,18 @@
-import "./checkout.css";
+import "../css/checkout.css";
 import { FaArrowLeft, FaPaypal, FaRegCreditCard } from "react-icons/fa6";
 import { PiHandCoinsLight } from "react-icons/pi";
 
 const CheckOut = () => {
+
+  const back = () => {
+    window.history.back();
+  }
+
   return (
     <div className="checkout">
       <div className="order-summary">
         <div className="summary">
-          <button>
+          <button onClick={back}>
             <FaArrowLeft />
           </button>
           <h2>ORDER SUMMARY</h2>
