@@ -125,7 +125,6 @@ header input {
   align-items: center;
   gap: 5rem;
   padding-left: 50px;
-  border: 1px solid red;
   overflow: scroll;
 }
 
@@ -158,13 +157,14 @@ header input {
 
 .selection{
   display: flex;
+  align-items: center;
   gap: 2rem;
   font-size: 1.5rem;
-  margin: 2rem 0;
+  margin: 2.5rem 0 1.5rem;
 }
 
 .tab{
-  padding: .5rem;
+  padding: .25rem 1rem;
   border: 1px solid #1f2e27;
   cursor: pointer;
 }
@@ -179,24 +179,31 @@ header input {
   color: #fff;
 }
 
-#store {
+.shop {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 3.2rem;
 }
 
 .product {
   width: 22%;
-  padding: 1rem;
   border: 1px solid #ccc;
-  border-radius: 8px;
-  text-align: center;
+  border-radius: 25px 25px 0 0;
 }
 
 .product img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+}
+
+.product h3 {
+  margin: 1rem;
+}
+
+.product span{
+  display: flex;
+  align-items: center;
+  margin: 1rem;
 }
 
 .cartbtn {

@@ -15,112 +15,84 @@ const Store = () => {
 
   const products = [
     {
-      name: "Missy",
-      image: "../public/nftavatar8.jpeg",
-      description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quo.`,
-      price: 15,
+      name: "Crazy Faded Blue Jean",
+      image: "../public/short.svg",
+      price: 345.95,
     },
     {
-      name: "Bored Ape",
-      image: "../public/nftavatar1.jpeg",
-      description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quo.`,
-      price: 30,
+      name: "Brown Dinner Jacket",
+      image: "../public/coat.svg",
+      price: 235.4,
     },
     {
-      name: "Jungle Ape",
-      image: "/add-to-cart/img/nftavatar2.jpeg",
-      description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam,
-        quo.`,
-      price: 20,
+      name: "Checkered Trousers",
+      image: "../public/pant.svg",
+      price: 400.4,
     },
     {
-      name: "Lina Win",
-      image: "/add-to-cart/img/nftavatar3.jpeg",
-      description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam,
-        quo.`,
+      name: "Beautiful Ankle Boot",
+      image: "../public/heel.svg",
       price: 12,
     },
     {
-      name: "Ocean Maiden",
-      image: "/add-to-cart/img/nftavatar4.jpeg",
-      description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam,
-        quo.`,
-      price: 10,
+      name: "Comfy White Sneakers",
+      image: "../public/sneakers.svg",
+      price: 345.95,
     },
     {
-      name: "Victor",
-      image: "/add-to-cart/img/nftavatar5.jpeg",
-      description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam,
-        quo.`,
-      price: 25,
+      name: "Flowery Skirt",
+      image: "../public/skirt.svg",
+      price: 235.4,
     },
     {
-      name: "Skater",
-      image: "/add-to-cart/img/nftavatar6.jpeg",
-      description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam,
-        quo.`,
-      price: 8,
+      name: "Plitted Black Gown",
+      image: "../public/gown.svg",
+      price: 400.4,
     },
     {
-      name: "Bored Dude",
-      image: "/add-to-cart/img/nftavatar7.jpeg",
-      description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam,
-        quo.`,
-      price: 22,
+      name: "Adire Shirts",
+      image: "../public/adire.svg",
+      price: 790.99,
     },
     {
-      name: "Missy",
-      image: "../public/nftavatar8.jpeg",
-      description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quo.`,
-      price: 15,
+      name: "Office Set",
+      image: "../public/set.svg",
+      price: 345.95,
     },
     {
-      name: "Bored Ape",
-      image: "../public/nftavatar1.jpeg",
-      description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quo.`,
-      price: 30,
+      name: "Corporate Shirt",
+      image: "../public/corporate.svg",
+      price: 235.4,
     },
     {
-      name: "Jungle Ape",
-      image: "/add-to-cart/img/nftavatar2.jpeg",
-      description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam,
-        quo.`,
-      price: 20,
+      name: "Brown Rain Jacket",
+      image: "../public/rain.svg",
+      price: 400.4,
     },
     {
-      name: "Lina Win",
-      image: "/add-to-cart/img/nftavatar3.jpeg",
-      description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam,
-        quo.`,
-      price: 12,
+      name: "Sleeky Dinner Heels",
+      image: "../public/dinner.svg",
+      price: 790.99,
     },
     {
-      name: "Ocean Maiden",
-      image: "/add-to-cart/img/nftavatar4.jpeg",
-      description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam,
-        quo.`,
-      price: 10,
+      name: "Winter Sweatshirt",
+      image: "../public/sweatshirt.svg",
+      price: 400.4,
     },
     {
-      name: "Victor",
-      image: "/add-to-cart/img/nftavatar5.jpeg",
-      description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam,
-        quo.`,
-      price: 25,
+      name: "White Office Shirt",
+      image: "../public/white.svg",
+      price: 235.4,
     },
     {
-      name: "Skater",
-      image: "/add-to-cart/img/nftavatar6.jpeg",
-      description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam,
-        quo.`,
-      price: 8,
+      name: "Red Dinner Gown",
+      image: "../public/red.svg",
+      price: 345.95,
     },
     {
-      name: "Bored Dude",
-      image: "/add-to-cart/img/nftavatar7.jpeg",
-      description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam,
-        quo.`,
-      price: 22,
+      name: "ANDE Brown Bag",
+      image: "../public/ande.svg",
+      price: 790.99,
     },
   ];
 
@@ -257,7 +229,7 @@ const Store = () => {
               <p>Flash sale</p>
               <span>{formatTime(countdown)}</span>
             </div>
-            <div className="top-right">
+            <div className="arrows">
               <button className="left-btn">&larr;</button>
               <button className="right-btn">&rarr;</button>
             </div>
@@ -381,19 +353,110 @@ const Store = () => {
           </div>
         </div>
 
-        <div id="store">
+        <div className="shop">
           {products.map((product, index) => (
             <div className="product" key={index}>
               <img src={product.image} alt={product.name} />
               <div className="icon-heart">
                 <FaRegHeart />
               </div>
-              <h3 className="name">{product.name}</h3>
+              <h3>{product.name}</h3>
               <span>
-                $<p className="price">{product.price}</p>
+                $<p>{product.price}</p>
               </span>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section>
+        <div className="stores">
+          <h2>Best Selling Stores</h2>
+          <div className="small-hero">
+            <img src="" alt="" />
+          </div>
+          <div className="store-list">
+            <div className="store">
+              <span>
+              <img src="" alt="" />
+              <h3>Mobolaji's Store</h3>
+              </span>
+              <span>
+                <span>
+                  <img src="" alt="" />
+                  <p>$40.00</p>
+                </span>
+                <span>
+                  <img src="" alt="" />
+                  <p>$40.00</p>
+                </span>
+                <span>
+                  <img src="" alt="" />
+                  <p>$40.00</p>
+                </span>
+              </span>
+            </div>
+            <div className="store">
+              <span>
+              <img src="" alt="" />
+              <h3>Whykay's Store</h3>
+              </span>
+              <span>
+                <span>
+                  <img src="" alt="" />
+                  <p>$40.00</p>
+                </span>
+                <span>
+                  <img src="" alt="" />
+                  <p>$40.00</p>
+                </span>
+                <span>
+                  <img src="" alt="" />
+                  <p>$40.00</p>
+                </span>
+              </span>
+            </div>
+            <div className="store">
+              <span>
+              <img src="" alt="" />
+              <h3>Emmy's Store</h3>
+              </span>
+              <span>
+                <span>
+                  <img src="" alt="" />
+                  <p>$40.00</p>
+                </span>
+                <span>
+                  <img src="" alt="" />
+                  <p>$40.00</p>
+                </span>
+                <span>
+                  <img src="" alt="" />
+                  <p>$40.00</p>
+                </span>
+              </span>
+            </div>
+            <div className="store">
+              <span>
+              <img src="" alt="" />
+              <h3>ANDE Hub</h3>
+              </span>
+              <span>
+                <span>
+                  <img src="" alt="" />
+                  <p>$40.00</p>
+                </span>
+                <span>
+                  <img src="" alt="" />
+                  <p>$40.00</p>
+                </span>
+                <span>
+                  <img src="" alt="" />
+                  <p>$40.00</p>
+                </span>
+              </span>
+            </div>
+          </div>
         </div>
       </section>
 
