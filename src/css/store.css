@@ -53,18 +53,30 @@ header input {
 .icons {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .icon-cart {
   display: flex;
   align-items: center;
   cursor: pointer;
+  position: relative;
 }
 
 .icon-cart span {
   margin-left: 0.5rem;
   font-weight: bold;
+  font-size: 1rem;
+  position: absolute;
+  top: -0.75rem;
+  right: -0.75rem;
+  background-color: #0d5c63;
+  color: #fff;
+  border-radius: 50%;
+  width: 1.2rem;
+  height: 1.2rem;
+  text-align: center;
 }
 
 .favorite-cart {
@@ -299,6 +311,11 @@ header input {
   width: 22%;
   border-radius: 25px 25px 0 0;
   position: relative;
+  cursor: pointer;
+}
+
+.product:active {
+  transform: scale(1.1);
 }
 
 .product img {
@@ -336,7 +353,7 @@ hr {
 .collections {
   display: flex;
   align-items: center;
-  gap: 5rem;
+  gap: 8rem;
 }
 
 .small-hero {
@@ -359,11 +376,11 @@ hr {
   flex-wrap: wrap;
   align-items: center;
   width: 60%;
-  gap: 2rem 7rem;
+  gap: 2rem 7.5rem;
 }
 
 .store-item {
-  width: 40%;
+  width: 42%;
   border: 1px solid #0d5c63;
   padding: 3rem;
   border-radius: 10px;
@@ -405,6 +422,22 @@ hr {
   font-size: 3rem;
   padding: 4rem;
   text-align: center;
+  position: relative;
+}
+
+.footer-hero h1 {
+  position: relative;
+  z-index: 2;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 
 footer {
@@ -528,15 +561,18 @@ footer span {
   margin: 1rem auto;
 }
 
+#cart-items::-webkit-scrollbar {
+  display: none;
+}
+
 .cart-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 20px 100px auto 20px;
+  margin: 0.5rem 0;
 }
 
 .cart-item .image img {
-  width: 100px;
+  width: 100%;
   height: 60px;
   border-radius: 4px;
 }
@@ -548,6 +584,7 @@ footer span {
   background-color: #d9d9d9;
   padding: 0.15rem;
   border-radius: 8px;
+  height: 60px;
 }
 
 .cart-item .quantity span {
@@ -561,7 +598,7 @@ footer span {
   font-size: 1rem;
   font-weight: 900;
   padding: 0.05rem;
-  line-height: 0.5rem;
+  height: min-content;
   margin: 0.25rem;
   background-color: #d9d9d9;
   cursor: pointer;
@@ -602,6 +639,10 @@ footer span {
 @media screen and (max-width: 1441px) {
   .product {
     width: 30%;
+  }
+  .store-list {
+    flex-wrap: nowrap;
+    overflow-y: scroll;
   }
 }
 
@@ -725,11 +766,12 @@ footer span {
   }
   .store-list {
     width: 80%;
+    height: 300px;
     flex-direction: column;
   }
   .store-item {
     width: 100%;
-    padding: 5rem;
+    padding: 3rem;
   }
   .collections {
     gap: 1rem;
@@ -772,6 +814,9 @@ footer span {
   }
   .store-item {
     padding: 1rem;
+  }
+  .subscription h3 {
+    font-size: 1.6rem;
   }
   .links {
     gap: 2rem;

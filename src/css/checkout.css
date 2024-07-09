@@ -1,7 +1,7 @@
 .checkout {
   display: flex;
   max-width: 1550px;
-  align-items: center;
+  align-items: flex-start;
   min-height: -moz-fit-content;
   min-height: fit-content;
   margin: 0 auto;
@@ -18,11 +18,40 @@
 
 .summary {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 4.65rem 5rem;
+  padding: 2rem 5rem;
   gap: 2rem;
   background-color: #0d5c63;
+  height: 500px;
+}
+
+.summary span{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-items {
+  overflow-y: scroll;
+}
+
+.cart-items::-webkit-scrollbar{
+  display: none;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cart-item img {
+  height: 70px;
 }
 
 .summary button {

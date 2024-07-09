@@ -1,8 +1,44 @@
-import "../css/checkout.css";
+import { useState, useEffect } from "react";
 import { FaArrowLeft, FaPaypal, FaRegCreditCard } from "react-icons/fa6";
 import { PiHandCoinsLight } from "react-icons/pi";
+import "../css/checkout.css";
 
 const CheckOut = () => {
+  const [cart, setCart] = useState([]);
+  const [subtotal, setSubtotal] = useState(0);
+  const [tax, setTax] = useState(0);
+  const [total, setTotal] = useState(0);
+  const [selectedShipping, setSelectedShipping] = useState("free");
+
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    setCart(storedCart);
+    calculateTotals(storedCart);
+  }, []);
+
+  const remove = (item) => {
+    const updatedCart = cart.filter((cartItem) => cartItem.name !== item.name);
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    calculateTotals(updatedCart);
+  };
+
+  const calculateTotals = (cartItems) => {
+    const subtotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    const tax = subtotal * 0.05; // 5% tax
+    const shipping = selectedShipping === "free" ? 5 : 0;
+    const total = subtotal + tax + shipping;
+
+    setSubtotal(subtotal);
+    setTax(tax);
+    setTotal(total);
+  };
+
+  const handleShippingChange = (event) => {
+    setSelectedShipping(event.target.value);
+    calculateTotals(cart);
+  };
+
   const back = () => {
     window.history.back();
   };
@@ -11,10 +47,27 @@ const CheckOut = () => {
     <div className="checkout">
       <div className="order-summary">
         <div className="summary">
-          <button className="back" onClick={back}>
-            <FaArrowLeft />
-          </button>
-          <h2>ORDER SUMMARY</h2>
+          <span>
+            <button className="back" onClick={back}>
+              <FaArrowLeft />
+            </button>
+            <h2>ORDER SUMMARY</h2>
+          </span>
+          <div className="cart-items">
+            {cart.map((item, index) => (
+              <div key={index} className="cart-item">
+                <img src={item.image} alt={item.name} className="cart-item-image" />
+                <div className="cart-item-details">
+                  <h4>{item.name}</h4>
+                  <p>Quantity: {item.quantity}</p>
+                  <p>Price: ${item.price.toFixed(2)}</p>
+                </div>
+                <div className="remove" onClick={() => remove(item)}>
+                  &#215;
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
         <div className="payment-options">
           <h3>Select Payment Options</h3>
@@ -36,34 +89,46 @@ const CheckOut = () => {
           <div className="payment-details">
             <div className="subtotal">
               <h4>Subtotal</h4>
-              <h4>$100.00</h4>
+              <h4>${subtotal.toFixed(2)}</h4>
             </div>
             <div className="tax">
               <h4>Tax</h4>
-              <h4>$5.00</h4>
+              <h4>${tax.toFixed(2)}</h4>
             </div>
             <h4>Shipping</h4>
             <div className="free">
               <span>
-                <input type="radio" name="free" id="free" />
+                <input
+                  type="radio"
+                  name="shipping"
+                  value="free"
+                  checked={selectedShipping === "free"}
+                  onChange={handleShippingChange}
+                />
                 <h4>Free</h4>
               </span>
-              <p>$5.00</p>
+              <p>$0.00</p>
             </div>
             <div className="flat">
               <span>
-                <input type="radio" name="flat" id="flat" />
+                <input
+                  type="radio"
+                  name="shipping"
+                  value="flat"
+                  checked={selectedShipping === "flat"}
+                  onChange={handleShippingChange}
+                />
                 <h4>Flat</h4>
               </span>
-              <p>$105.00</p>
+              <p>$5.00</p>
             </div>
             <hr />
             <div className="total">
               <h4>Total</h4>
-              <h4>$110.00</h4>
+              <h4>${total.toFixed(2)}</h4>
             </div>
           </div>
-          <button className="order">Place Your Order Now</button>
+          <button className="order" onClick={back}>Place Your Order Now</button>
         </div>
       </div>
       <div className="billing-details">
@@ -114,7 +179,7 @@ const CheckOut = () => {
             </div>
           </div>
           <div className="create">
-            <input type="checkbox" name="create" id="create" />
+            <input type="checkbox" name="create" id="create" onClick={back}/>
             Create An Account
           </div>
         </form>

@@ -1,4 +1,3 @@
-// components/Store.jsx
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/store.css";
@@ -43,7 +42,7 @@ const Store = () => {
     {
       name: "Beautiful Ankle Boot",
       image: "/static/images/heel.svg",
-      price: 12,
+      price: 790.99,
     },
     {
       name: "Comfy White Sneakers",
@@ -112,7 +111,6 @@ const Store = () => {
     setCart(storedCart);
     updateCartCount(storedCart);
 
-    // Start the countdown timer
     const timer = setInterval(() => {
       setCountdown((prev) => (prev > 0 ? prev - 1 : 0));
     }, 1000);
@@ -524,6 +522,7 @@ const Store = () => {
 
       <section>
         <div className="footer-hero">
+          <div className="overlay"></div>
           <h1>“Let’s Us Shop beyond Boundaries”</h1>
         </div>
       </section>
@@ -622,7 +621,7 @@ const Store = () => {
                 <div className="item-details">
                   <div className="name">{item.name}</div>
                   <div className="quantityPrice">
-                    ${item.price.toFixed(2) * item.quantity}
+                    ${(item.price * item.quantity).toFixed(2)}
                   </div>
                 </div>
                 <div className="remove" onClick={() => remove(item)}>
