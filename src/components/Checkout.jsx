@@ -43,6 +43,12 @@ const CheckOut = () => {
     window.history.back();
   };
 
+  const placeOrder = () => {
+    localStorage.removeItem("cart");
+    setCart([]);
+    window.history.back();
+  };
+
   return (
     <div className="checkout">
       <div className="order-summary">
@@ -128,7 +134,7 @@ const CheckOut = () => {
               <h4>${total.toFixed(2)}</h4>
             </div>
           </div>
-          <button className="order" onClick={back}>Place Your Order Now</button>
+          <button className="order" onClick={placeOrder}>Place Your Order Now</button>
         </div>
       </div>
       <div className="billing-details">
