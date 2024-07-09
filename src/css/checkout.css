@@ -1,25 +1,28 @@
 .checkout {
   display: flex;
   max-width: 1550px;
-  max-height: 100dvh;
   align-items: center;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
   margin: 0 auto;
 }
 
 .order-summary {
   width: 50%;
   color: #fff;
-  min-height: 100dvh;
+}
+
+.backsm {
+  display: none;
 }
 
 .summary {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5rem;
+  padding: 4.65rem 5rem;
   gap: 2rem;
   background-color: #0d5c63;
-  text-align: center;
 }
 
 .summary button {
@@ -50,6 +53,9 @@
   gap: 4rem;
   justify-content: center;
 }
+.payment-methods p:hover {
+  color: #0d5c63;
+}
 
 .coupon {
   background-color: #fff;
@@ -72,7 +78,7 @@
   background-color: #1f2e27;
   color: #fff;
   border: 0;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   text-align: center;
   cursor: pointer;
   border-radius: 10px;
@@ -159,8 +165,7 @@ input[type="radio"] {
 
 .billing-details {
   width: 50%;
-  padding: 5rem 4rem;
-  height: 100dvh;
+  padding: 0rem 4rem;
 }
 
 .billing-details h2 {
@@ -241,4 +246,69 @@ label {
   gap: 0.5rem;
   align-items: center;
   margin: 2rem 0;
+}
+
+@media screen and (max-width: 768px) {
+  .back {
+    display: none;
+  }
+  .backsm {
+    display: block;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #fff;
+    border: 0;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+  }
+  .summarysm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background-color: transparent;
+  }
+  .checkout {
+    flex-direction: column-reverse;
+  }
+  .billing-details {
+    width: 80%;
+    padding: 0rem 2rem;
+  }
+  .name {
+    flex-direction: column;
+    gap: 0;
+  }
+  .last-name {
+    width: 100%;
+  }
+  .first-name {
+    width: 100%;
+  }
+  .order-summary {
+    width: 100%;
+  }
+  .summary {
+    padding: 2rem 0rem 15rem;
+  }
+  .payment-options {
+    border-radius: 15px 15px 0 0;
+    padding: 0 7rem 0.25rem;
+    margin: -1rem 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .billing-details {
+    width: 100%;
+  }
+  .billing-details h2 {
+    margin: 1rem 0;
+  }
+  .num {
+    display: flex;
+  }
+  .payment-options {
+    padding: 0 2rem 0.25rem;
+  }
 }

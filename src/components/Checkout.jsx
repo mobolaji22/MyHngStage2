@@ -3,16 +3,15 @@ import { FaArrowLeft, FaPaypal, FaRegCreditCard } from "react-icons/fa6";
 import { PiHandCoinsLight } from "react-icons/pi";
 
 const CheckOut = () => {
-
   const back = () => {
     window.history.back();
-  }
+  };
 
   return (
     <div className="checkout">
       <div className="order-summary">
         <div className="summary">
-          <button onClick={back}>
+          <button className="back" onClick={back}>
             <FaArrowLeft />
           </button>
           <h2>ORDER SUMMARY</h2>
@@ -20,9 +19,15 @@ const CheckOut = () => {
         <div className="payment-options">
           <h3>Select Payment Options</h3>
           <div className="payment-methods">
-            <FaRegCreditCard />
-            <FaPaypal />
-            <PiHandCoinsLight />
+            <p>
+              <FaRegCreditCard />
+            </p>
+            <p>
+              <FaPaypal />
+            </p>
+            <p>
+              <PiHandCoinsLight />
+            </p>
           </div>
           <div className="coupon">
             <input type="text" id="coupon" placeholder="COUPON" />
@@ -62,7 +67,12 @@ const CheckOut = () => {
         </div>
       </div>
       <div className="billing-details">
-        <h2>Billing Details</h2>
+        <div className="summarysm">
+          <button className="backsm" onClick={back}>
+            <FaArrowLeft />
+          </button>
+          <h2>Billing Details</h2>
+        </div>
         <form>
           <div className="name">
             <div className="last-name">
