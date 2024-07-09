@@ -27,82 +27,82 @@ const Store = () => {
   const products = [
     {
       name: "Crazy Faded Blue Jean",
-      image: "../public/images/short.svg",
+      image: "/static/images/short.svg",
       price: 345.95,
     },
     {
       name: "Brown Dinner Jacket",
-      image: "../public/images/coat.svg",
+      image: "/static/images/coat.svg",
       price: 235.4,
     },
     {
       name: "Checkered Trousers",
-      image: "../public/images/pant.svg",
+      image: "/static/images/pant.svg",
       price: 400.4,
     },
     {
       name: "Beautiful Ankle Boot",
-      image: "../public/images/heel.svg",
+      image: "/static/images/heel.svg",
       price: 12,
     },
     {
       name: "Comfy White Sneakers",
-      image: "../public/images/sneakers.svg",
+      image: "/static/images/sneakers.svg",
       price: 345.95,
     },
     {
       name: "Flowery Skirt",
-      image: "../public/images/skirt.svg",
+      image: "/static/images/skirt.svg",
       price: 235.4,
     },
     {
       name: "Plitted Black Gown",
-      image: "../public/images/gown.svg",
+      image: "/static/images/gown.svg",
       price: 400.4,
     },
     {
       name: "Adire Shirts",
-      image: "../public/images/adire.svg",
+      image: "/static/images/adire.svg",
       price: 790.99,
     },
     {
       name: "Office Set",
-      image: "../public/images/set.svg",
+      image: "/static/images/set.svg",
       price: 345.95,
     },
     {
       name: "Corporate Shirt",
-      image: "../public/images/corporate.svg",
+      image: "/static/images/corporate.svg",
       price: 235.4,
     },
     {
       name: "Brown Rain Jacket",
-      image: "../public/images/rain.svg",
+      image: "/static/images/rain.svg",
       price: 400.4,
     },
     {
       name: "Sleeky Dinner Heels",
-      image: "../public/images/dinner.svg",
+      image: "/static/images/dinner.svg",
       price: 790.99,
     },
     {
       name: "Winter Sweatshirt",
-      image: "../public/images/sweatshirt.svg",
+      image: "/static/images/sweatshirt.svg",
       price: 400.4,
     },
     {
       name: "White Office Shirt",
-      image: "../public/images/white.svg",
+      image: "/static/images/white.svg",
       price: 235.4,
     },
     {
       name: "Red Dinner Gown",
-      image: "../public/images/red.svg",
+      image: "/static/images/red.svg",
       price: 345.95,
     },
     {
       name: "ANDE Brown Bag",
-      image: "../public/images/ande.svg",
+      image: "/static/images/ande.svg",
       price: 790.99,
     },
   ];
@@ -226,20 +226,27 @@ const Store = () => {
       </header>
 
       <div className="hero">
-        <img src="../public/images/limited.svg" alt="" />
+        <img
+          src="/static/images/limited.svg"
+          alt="limited"
+          className="limited"
+        />
+        <img src="/static/images/herosm.svg" alt="limited" className="herosm" />
       </div>
 
       <div className="categories">
-        <img src="../public/images/Ellipse 3.svg" alt="" />
-        <img src="../public/images/Ellipse 4.svg" alt="" />
-        <img src="../public/images/Ellipse 5.svg" alt="" />
-        <img src="../public/images/Ellipse 6.svg" alt="" />
-        <img src="../public/images/Ellipse 7.svg" alt="" />
-        <img src="../public/images/Ellipse 8.svg" alt="" />
-        <img src="../public/images/Ellipse 9.svg" alt="" />
-        <img src="../public/images/Ellipse 10.svg" alt="" />
-        <img src="../public/images/Ellipse 11.svg" alt="" />
-        <LuSettings2 className="setting" />
+        <img src="/static/images/Ellipse 3.svg" alt="" />
+        <img src="/static/images/Ellipse 4.svg" alt="" />
+        <img src="/static/images/Ellipse 5.svg" alt="" />
+        <img src="/static/images/Ellipse 6.svg" alt="" />
+        <img src="/static/images/Ellipse 7.svg" alt="" />
+        <img src="/static/images/Ellipse 8.svg" alt="" />
+        <img src="/static/images/Ellipse 9.svg" alt="" />
+        <img src="/static/images/Ellipse 10.svg" alt="" />
+        <img src="/static/images/Ellipse 11.svg" alt="" />
+        <p>
+          <LuSettings2 className="setting" />
+        </p>
       </div>
 
       <section>
@@ -260,7 +267,7 @@ const Store = () => {
           <div className="flash-slide">
             <div className="scroll">
               <div className="flash-card">
-                <img src="../public/images/woman-sitting.svg" alt="" />
+                <img src="/static/images/woman-sitting.svg" alt="" />
                 <div className="icon-heart">
                   <FaRegHeart />
                 </div>
@@ -279,7 +286,7 @@ const Store = () => {
                 </div>
               </div>
               <div className="flash-card">
-                <img src="../public/images/hat.svg" alt="" />
+                <img src="/static/images/hat.svg" alt="" />
                 <div className="icon-heart">
                   <FaRegHeart />
                 </div>
@@ -298,7 +305,7 @@ const Store = () => {
                 </div>
               </div>
               <div className="flash-card">
-                <img src="../public/images/bag.svg" alt="" />
+                <img src="/static/images/bag.svg" alt="" />
                 <div className="icon-heart">
                   <FaRegHeart />
                 </div>
@@ -317,7 +324,7 @@ const Store = () => {
                 </div>
               </div>
               <div className="flash-card">
-                <img src="../public/images/shoe.svg" alt="" />
+                <img src="/static/images/shoe.svg" alt="" />
                 <div className="icon-heart">
                   <FaRegHeart />
                 </div>
@@ -336,7 +343,7 @@ const Store = () => {
                 </div>
               </div>
               <div className="flash-card">
-                <img src="../public/images/man.svg" alt="" />
+                <img src="/static/images/man.svg" alt="" />
                 <div className="icon-heart">
                   <FaRegHeart />
                 </div>
@@ -403,14 +410,14 @@ const Store = () => {
           <h1>Best Selling Stores</h1>
           <div className="collections">
             <div className="small-hero">
-              <img src="../public/images/red-bag.jpeg" alt="" />
+              <img src="/static/images/red-bag.jpeg" alt="" />
             </div>
             <div className="store-list">
               <div className="store-item">
                 <span className="profile">
                   <span>
-                    <img src="../public/images/profile.svg" alt="" />
-                    <img src="../public/images/rose.svg" alt="" id="rose" />
+                    <img src="/static/images/profile.svg" alt="" />
+                    <img src="/static/images/rose.svg" alt="" id="rose" />
                   </span>
                   <div>
                     <h3>Mobolaji&#39;s Store</h3>
@@ -419,15 +426,15 @@ const Store = () => {
                 </span>
                 <span className="thumbnails">
                   <span>
-                    <img src="../public/images/store-bag.svg" alt="" />
+                    <img src="/static/images/store-bag.svg" alt="" />
                     <p>$40.00</p>
                   </span>
                   <span>
-                    <img src="../public/images/store-shirt.svg" alt="" />
+                    <img src="/static/images/store-shirt.svg" alt="" />
                     <p>$40.00</p>
                   </span>
                   <span>
-                    <img src="../public/images/store-socks.svg" alt="" />
+                    <img src="/static/images/store-socks.svg" alt="" />
                     <p>$40.00</p>
                   </span>
                 </span>
@@ -435,8 +442,8 @@ const Store = () => {
               <div className="store-item">
                 <span className="profile">
                   <span>
-                    <img src="../public/images/profile.svg" alt="" />
-                    <img src="../public/images/rose.svg" alt="" id="rose" />
+                    <img src="/static/images/profile.svg" alt="" />
+                    <img src="/static/images/rose.svg" alt="" id="rose" />
                   </span>
                   <div>
                     <h3>Whykay&#39;s Store</h3>
@@ -445,15 +452,15 @@ const Store = () => {
                 </span>
                 <span className="thumbnails">
                   <span>
-                    <img src="../public/images/store-bag.svg" alt="" />
+                    <img src="/static/images/store-bag.svg" alt="" />
                     <p>$40.00</p>
                   </span>
                   <span>
-                    <img src="../public/images/store-shirt.svg" alt="" />
+                    <img src="/static/images/store-shirt.svg" alt="" />
                     <p>$40.00</p>
                   </span>
                   <span>
-                    <img src="../public/images/store-socks.svg" alt="" />
+                    <img src="/static/images/store-socks.svg" alt="" />
                     <p>$40.00</p>
                   </span>
                 </span>
@@ -461,8 +468,8 @@ const Store = () => {
               <div className="store-item">
                 <span className="profile">
                   <span>
-                    <img src="../public/images/profile.svg" alt="" />
-                    <img src="../public/images/rose.svg" alt="" id="rose" />
+                    <img src="/static/images/profile.svg" alt="" />
+                    <img src="/static/images/rose.svg" alt="" id="rose" />
                   </span>
                   <div>
                     <h3>Emmy&#39;s Store</h3>
@@ -471,15 +478,15 @@ const Store = () => {
                 </span>
                 <span className="thumbnails">
                   <span>
-                    <img src="../public/images/store-bag.svg" alt="" />
+                    <img src="/static/images/store-bag.svg" alt="" />
                     <p>$40.00</p>
                   </span>
                   <span>
-                    <img src="../public/images/store-shirt.svg" alt="" />
+                    <img src="/static/images/store-shirt.svg" alt="" />
                     <p>$40.00</p>
                   </span>
                   <span>
-                    <img src="../public/images/store-socks.svg" alt="" />
+                    <img src="/static/images/store-socks.svg" alt="" />
                     <p>$40.00</p>
                   </span>
                 </span>
@@ -487,8 +494,8 @@ const Store = () => {
               <div className="store-item">
                 <span className="profile">
                   <span>
-                    <img src="../public/images/profile.svg" alt="" />
-                    <img src="../public/images/rose.svg" alt="" id="rose" />
+                    <img src="/static/images/profile.svg" alt="" />
+                    <img src="/static/images/rose.svg" alt="" id="rose" />
                   </span>
                   <div>
                     <h3>ANDE Hub</h3>
@@ -497,15 +504,15 @@ const Store = () => {
                 </span>
                 <span className="thumbnails">
                   <span>
-                    <img src="../public/images/store-bag.svg" alt="" />
+                    <img src="/static/images/store-bag.svg" alt="" />
                     <p>$40.00</p>
                   </span>
                   <span>
-                    <img src="../public/images/store-shirt.svg" alt="" />
+                    <img src="/static/images/store-shirt.svg" alt="" />
                     <p>$40.00</p>
                   </span>
                   <span>
-                    <img src="../public/images/store-socks.svg" alt="" />
+                    <img src="/static/images/store-socks.svg" alt="" />
                     <p>$40.00</p>
                   </span>
                 </span>
