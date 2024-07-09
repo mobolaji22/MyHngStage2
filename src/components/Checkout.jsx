@@ -24,7 +24,10 @@ const CheckOut = () => {
   };
 
   const calculateTotals = (cartItems) => {
-    const subtotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    const subtotal = cartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
     const tax = subtotal * 0.05; // 5% tax
     const shipping = selectedShipping === "free" ? 5 : 0;
     const total = subtotal + tax + shipping;
@@ -44,9 +47,14 @@ const CheckOut = () => {
   };
 
   const placeOrder = () => {
-    localStorage.removeItem("cart");
-    setCart([]);
-    window.history.back();
+    if (cart.length !== 0) {
+      localStorage.removeItem("cart");
+      setCart([]);
+      window.history.back();
+      alert("Order placed successfully!");
+    } else {
+      alert("Cart is empty! Please add items to proceed.");
+    }
   };
 
   return (
@@ -62,7 +70,11 @@ const CheckOut = () => {
           <div className="checkout-cart-items">
             {cart.map((item, index) => (
               <div key={index} className="checkout-cart-item">
-                <img src={item.image} alt={item.name} className="cart-item-image" />
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="cart-item-image"
+                />
                 <div className="checkout-cart-item-details">
                   <h4>{item.name}</h4>
                   <p>Quantity: {item.quantity}</p>
@@ -134,7 +146,9 @@ const CheckOut = () => {
               <h4>${total.toFixed(2)}</h4>
             </div>
           </div>
-          <button className="order" onClick={placeOrder}>Place Your Order Now</button>
+          <button className="order" onClick={placeOrder}>
+            Place Your Order Now
+          </button>
         </div>
       </div>
       <div className="billing-details">
@@ -185,7 +199,7 @@ const CheckOut = () => {
             </div>
           </div>
           <div className="create">
-            <input type="checkbox" name="create" id="create" onClick={back}/>
+            <input type="checkbox" name="create" id="create" onClick={back} />
             Create An Account
           </div>
         </form>
