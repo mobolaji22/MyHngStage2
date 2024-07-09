@@ -620,6 +620,9 @@ footer span {
     width: 85%;
     padding-left: 0rem;
   }
+  .selection {
+    font-size: 1.2rem;
+  }
   .product {
     width: 29%;
   }
@@ -645,6 +648,16 @@ footer span {
   }
   .navigation {
     padding: 1rem 60px;
+  }
+  .specials {
+    text-wrap: nowrap;
+  }
+  .selection {
+    font-size: 1rem;
+    gap: 1rem;
+  }
+  .tab {
+    padding: 0.25rem 0.5rem;
   }
   .product {
     width: 46%;
