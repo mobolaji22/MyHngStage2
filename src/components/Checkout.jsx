@@ -53,11 +53,11 @@ const CheckOut = () => {
             </button>
             <h2>ORDER SUMMARY</h2>
           </span>
-          <div className="cart-items">
+          <div className="checkout-cart-items">
             {cart.map((item, index) => (
-              <div key={index} className="cart-item">
+              <div key={index} className="checkout-cart-item">
                 <img src={item.image} alt={item.name} className="cart-item-image" />
-                <div className="cart-item-details">
+                <div className="checkout-cart-item-details">
                   <h4>{item.name}</h4>
                   <p>Quantity: {item.quantity}</p>
                   <p>Price: ${item.price.toFixed(2)}</p>

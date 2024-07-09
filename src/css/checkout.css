@@ -31,15 +31,15 @@
   gap: 1rem;
 }
 
-.cart-items {
+.checkout-cart-items {
   overflow-y: scroll;
 }
 
-.cart-items::-webkit-scrollbar{
+.checkout-cart-items::-webkit-scrollbar{
   display: none;
 }
 
-.cart-item {
+.checkout-cart-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,7 +47,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.cart-item img {
+.checkout-cart-item img {
   height: 70px;
 }
 
@@ -336,5 +336,8 @@ label {
   }
   .payment-options {
     padding: 0 2rem 0.25rem;
+  }
+  .checkout-cart-item{
+    gap: 1rem;
   }
 }

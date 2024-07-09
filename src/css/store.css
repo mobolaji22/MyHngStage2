@@ -567,6 +567,7 @@ footer span {
 
 .cart-item {
   display: grid;
+  
   grid-template-columns: 20px 100px auto 20px;
   margin: 0.5rem 0;
 }
